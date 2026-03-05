@@ -1,0 +1,14 @@
+version: "0.1.0"
+description: "Single-button widget and menu system for ESP32 with LVGL"
+url: "https://github.com/apolesskiy/ezmodes-esp-one-button-widgets"
+
+dependencies:
+  idf:
+    version: ">=5.5.0"
+  espressif/esp_lvgl_port:
+    version: ">=2.4.0"
+  apolesskiy/ezmodes-esp-base:
+    version: ">=0.1.0"
+    git: git@github.com:apolesskiy/ezmodes-esp-base.git
+    rules:
+      - if: "idf_version >=5.5.0"

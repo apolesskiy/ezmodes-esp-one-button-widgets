@@ -1,0 +1,18 @@
+idf_component_register(
+  SRCS
+    "src/menu.cpp"
+    "src/menu_controller.cpp"
+    "src/inline_menu.cpp"
+    "src/mode_selection_service.cpp"
+    "src/widgets/action_widget.cpp"
+    "src/widgets/spinner_widget.cpp"
+    "src/widgets/submenu_widget.cpp"
+    "src/widgets/toggle_widget.cpp"
+  INCLUDE_DIRS
+    "include"
+  REQUIRES
+    log
+    esp_lvgl_port
+  PRIV_REQUIRES
+    freertos
+)
