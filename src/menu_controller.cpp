@@ -256,7 +256,7 @@ void MenuController::handle_input_result(InputResult result, Widget* source) {
 
     case InputResult::kSelected: {
       // Check if it's a submenu widget
-      SubmenuWidget* submenu = dynamic_cast<SubmenuWidget*>(source);
+      SubmenuWidget* submenu = static_cast<SubmenuWidget*>(source);
       if (submenu != nullptr) {
         push(submenu->get_submenu());
       }

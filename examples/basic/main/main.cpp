@@ -6,6 +6,9 @@
  * widgets using the ezmodes one-button widget library.
  */
 
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
 #include "ezmodes/ui/menu.hpp"
 #include "ezmodes/ui/menu_controller.hpp"
 #include "ezmodes/ui/widgets/action_widget.hpp"
@@ -76,4 +79,19 @@ void build_demo_menu(lv_obj_t* screen, const lv_font_t* font) {
 
   // In your button handler, call:
   // controller.handle_input(short_press);
+}
+
+extern "C" void app_main(void) {
+  ESP_LOGI(TAG, "One-button widgets example starting");
+
+  // NOTE: LVGL display must be initialized before calling build_demo_menu().
+  // See your board's display driver documentation for initialization.
+
+  // Once display is ready, call:
+  // build_demo_menu(lv_scr_act(), &lv_font_montserrat_14);
+
+  // Keep main task alive
+  while (true) {
+    vTaskDelay(pdMS_TO_TICKS(1000));
+  }
 }
