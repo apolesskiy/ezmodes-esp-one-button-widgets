@@ -64,6 +64,7 @@ class SubmenuWidget : public Widget {
   void destroy() override;
   void set_focused(bool focused) override;
   bool is_focused() const override { return focused_; }
+  bool is_submenu() const override { return true; }
   InputResult handle_input(bool short_press) override;
 
  private:

@@ -255,12 +255,10 @@ void MenuController::handle_input_result(InputResult result, Widget* source) {
       break;
 
     case InputResult::kSelected: {
-      // Check if it's a submenu widget
-      SubmenuWidget* submenu = static_cast<SubmenuWidget*>(source);
-      if (submenu != nullptr) {
+      if (source->is_submenu()) {
+        auto* submenu = static_cast<SubmenuWidget*>(source);
         push(submenu->get_submenu());
       }
-      // Otherwise, the widget's callback handles the action
       break;
     }
 

@@ -78,6 +78,12 @@ class Widget {
    */
   virtual bool is_focusable() const { return true; }
 
+  /**
+   * @brief Check if this widget is a submenu that should be pushed on selection.
+   * @return true only for SubmenuWidget
+   */
+  virtual bool is_submenu() const { return false; }
+
   // --- Input Handling ---
 
   /**

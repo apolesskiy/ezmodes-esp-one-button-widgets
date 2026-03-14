@@ -1,4 +1,4 @@
-version: "0.1.0"
+version: "0.1.1"
 description: "Single-button widgets and menus for ESP32 with LVGL"
 url: "https://github.com/apolesskiy/ezmodes-esp-one-button-widgets"
 
