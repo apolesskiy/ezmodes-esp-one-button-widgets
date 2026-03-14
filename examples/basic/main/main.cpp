@@ -15,6 +15,7 @@
 #include "ezmodes/ui/widgets/spinner_widget.hpp"
 #include "ezmodes/ui/widgets/submenu_widget.hpp"
 #include "ezmodes/ui/widgets/toggle_widget.hpp"
+#include "ezmodes/ui/widgets/info_screen_widget.hpp"
 
 #include "esp_log.h"
 
@@ -73,6 +74,23 @@ void build_demo_menu(lv_obj_t* screen, const lv_font_t* font) {
   auto submenu = std::make_unique<SubmenuWidget>("Advanced >",
                                                   std::move(advanced));
   root->add_child(std::move(submenu));
+
+  // Info screen: read-only display with back on long-press
+  auto info_menu = std::make_unique<Menu>(nullptr, config);
+  auto info_widget = std::make_unique<InfoScreenWidget>(font);
+  info_widget->set_line(0, "SN:AABBCCDDEEFF");
+  info_widget->set_line(1, "Fw:example_app");
+  info_widget->set_line(2, "V:1.0.0");
+  info_widget->set_line(3, "#:abcde");
+  info_widget->set_on_back([&controller](InfoScreenWidget& w) {
+    (void)w;
+    controller.pop();
+  });
+  info_menu->add_child(std::move(info_widget));
+
+  auto info_sub = std::make_unique<SubmenuWidget>("Info >",
+                                                   std::move(info_menu));
+  root->add_child(std::move(info_sub));
 
   // Push root menu
   controller.push(root.get());

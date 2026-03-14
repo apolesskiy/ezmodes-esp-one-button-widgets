@@ -22,6 +22,7 @@ add_executable(test_widgets
   ${CMAKE_CURRENT_SOURCE_DIR}/../src/widgets/submenu_widget.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/../src/widgets/spinner_widget.cpp
   ${CMAKE_CURRENT_SOURCE_DIR}/../src/widgets/toggle_widget.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/../src/widgets/info_screen_widget.cpp
 )
 
 add_test(NAME widget_tests COMMAND test_widgets)

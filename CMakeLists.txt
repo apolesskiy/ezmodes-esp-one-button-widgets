@@ -8,6 +8,7 @@ idf_component_register(
     "src/widgets/spinner_widget.cpp"
     "src/widgets/submenu_widget.cpp"
     "src/widgets/toggle_widget.cpp"
+    "src/widgets/info_screen_widget.cpp"
   INCLUDE_DIRS
     "include"
   REQUIRES

@@ -24,9 +24,9 @@ void SubmenuWidget::render(lv_obj_t* parent, int32_t y_offset) {
   // Create label with indicator
   lv_label_ = lv_label_create(parent);
 
-  // Format as "label >"
+  // Format as "label"
   static char buffer[64];
-  snprintf(buffer, sizeof(buffer), "%s >", label_);
+  snprintf(buffer, sizeof(buffer), "%s", label_);
   lv_label_set_text(lv_label_, buffer);
   lv_label_set_long_mode(lv_label_, LV_LABEL_LONG_DOT);
 
